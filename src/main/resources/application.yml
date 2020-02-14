@@ -1,0 +1,24 @@
+spring:
+  thymeleaf:
+    mode: HTML5
+
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/blog?useSSL=false&characterEncoding=utf-8
+    username: root
+    password:
+
+  redis:
+    host: localhost
+    port: 6379
+    jedis:
+      pool:
+        max-active: -1
+        max-wait: 3000ms
+    timeout: 3000ms
+
+logging:
+  level:
+    root: info
+    com.ljnt: debug
+  file: log/imcoding.log
