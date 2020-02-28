@@ -58,7 +58,7 @@ public class LoginController {
     @PostMapping("/admin")
     @RequiresRoles(logical = Logical.OR,value = {"admin"})
 //    @ResponseBody
-    public String admin() throws JsonProcessingException {
+    public Object admin() throws JsonProcessingException {
 //        HashMap<String,Object> hs=new HashMap<>();
 //        hs.put("info","成功访问admin接口！");
 //        ObjectMapper objectMapper=new ObjectMapper();

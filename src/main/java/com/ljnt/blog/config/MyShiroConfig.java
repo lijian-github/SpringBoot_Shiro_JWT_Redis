@@ -33,7 +33,8 @@ public class MyShiroConfig {
         filterMap.put("jwt", new JWTFilter());
         shiroFilterFactoryBean.setFilters(filterMap);
         shiroFilterFactoryBean.setSecurityManager(securityManager);
-        Map<String,String> filterRuleMap=new HashMap<>();
+        //不要用HashMap来创建Map，会有某些配置失效，要用链表的LinkedHashmap
+        Map<String,String> filterRuleMap=new LinkedHashMap<>();
         //放行接口
         filterRuleMap.put("/","anon");
         filterRuleMap.put("/webjars/**","anon");
