@@ -39,6 +39,7 @@ public class CustomRealm extends AuthorizingRealm {
         System.out.println("用户授权");
         String username=TokenUtil.getAccount(principalCollection.toString());
         SimpleAuthorizationInfo info= new SimpleAuthorizationInfo();
+        //正确的业务流程是到数据库拿该用户的权限再去进行授权的，这里只是简单的直接授权
         if (username.equals("admin")){
             Set<String> role=new HashSet<>();
             role.add("admin");
@@ -63,6 +64,7 @@ public class CustomRealm extends AuthorizingRealm {
         String token= (String) authenticationToken.getCredentials();
         String username= TokenUtil.getAccount(token);
         System.out.println(username);
+        //这里要去数据库查找是否存在该用户，这里直接放行
         if (username==null){
             throw new AuthenticationException("认证失败！");
         }

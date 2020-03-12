@@ -29,7 +29,7 @@ public class Result {
      * 请求成功，但业务逻辑处理不通过
      */
     public Result NO() {
-        this.success = true;
+        this.success = false;
         this.code = 400;
         return this;
     }
@@ -40,13 +40,13 @@ public class Result {
 
     public Result(int code) {
         super();
-        this.success = true;
+        this.success = false;
         this.code = code;
     }
 
     public Result(int code, String msg) {
         super();
-        this.success = true;
+        this.success = false;
         this.code = code;
         this.msg = msg;
     }

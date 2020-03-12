@@ -12,6 +12,7 @@ import org.springframework.validation.BindException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.NoHandlerFoundException;
@@ -23,26 +24,12 @@ import java.util.List;
 import java.util.Map;
 
 @ControllerAdvice
+@ResponseBody
 public class GlobalExceptionHandler {
 
-    private final Logger logger = LoggerFactory.getLogger(GlobalExceptionHandler.class);
-    /**
-     * 异常处理
-     * @param request
-     * @param e
-     * @return
-     */
-//    @ExceptionHandler({Exception.class, ShiroException.class})
-//    public ModelAndView handleException(HttpServletRequest request, Exception e) throws Exception {
-//        System.out.println("异常");
-//        logger.error("Request URL : {} , Exception : {}", request.getRequestURL(), e);
-//        ModelAndView mav = new ModelAndView();
-//        mav.addObject("url", request.getRequestURL());
-//        mav.addObject("exception", e);
-//        mav.setViewName("error/error");
-//
-//        return mav;
-//    }
+    //日志，这里不说日志
+//    private final Logger logger = LoggerFactory.getLogger(GlobalExceptionHandler.class);
+
 
     /**
      * 捕捉所有Shiro异常
