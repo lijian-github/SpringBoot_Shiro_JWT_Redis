@@ -56,18 +56,6 @@ public class LoginController {
         return new Result().OK();
     };
 
-    @PostMapping("/user")
-    @RequiresRoles(logical = Logical.OR,value = {"user","admin"})
-    @ResponseBody
-    public Result user(){
-        return new Result(200,"成功访问user接口！");
-    };
 
-    @PostMapping("/admin")
-    @RequiresRoles(logical = Logical.OR,value = {"admin"})
-    @ResponseBody
-    public Object admin() {
-        return new Result(200,"成功访问admin接口！");
-    };
 
 }

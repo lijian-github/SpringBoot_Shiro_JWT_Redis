@@ -1,0 +1,8 @@
+{
+  "success": false,
+  "code": 401,
+  "msg": "no token",
+  "res": {
+    "empty": true
+  }
+}
